@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'cp -rf /var/lib/jenkins/workspace/My\ Angular\ App/dist/angular-jenkins-app/browser/* /var/www/html/angularapp/'
+                sh ```cp -rf /var/lib/jenkins/workspace/My\ Angular\ App/dist/angular-jenkins-app/browser/* /var/www/html/angularapp/```
             }
         }
     }
