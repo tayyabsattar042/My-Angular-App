@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 // Clone your repository
-                git 'https://github.com/tayyabsattar042/My-Angular-App.git'
+                git branch: 'main', url:'https://github.com/tayyabsattar042/My-Angular-App.git'
             }
         }
 
