@@ -22,7 +22,7 @@ pipeline {
 
         stage('Run Application') {
             steps {
-                sh 'ng serve -p 8080'
+                sh 'ng serve --port 8080'
             }
         }
     }
