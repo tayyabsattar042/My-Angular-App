@@ -7,22 +7,19 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/tayyabsattar042/My-Angular-App.git'
             }
         }
-
-        stage('Install Dependencies') {
+        stage('Install') {
             steps {
                 sh 'npm install'
             }
         }
-
-        stage('Build Angular App') {
+        stage('Build') {
             steps {
                 sh 'ng build --configuration production'
             }
         }
-
-        stage('Run Application') {
+        stage('Deploy') {
             steps {
-                sh 'ng serve --port 8080'
+                sh 'ng serve --port 8081'
             }
         }
     }
