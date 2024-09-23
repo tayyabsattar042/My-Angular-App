@@ -1,29 +1,31 @@
 pipeline {
     agent any
+        stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/your-repo/my-angular-app.git' // Replace with your repo
+                // Clone your repository
+                git 'https://github.com/tayyabsattar042/My-Angular-App.git'
             }
         }
 
-        stage('Build') {
+        stage('Install Dependencies') {
             steps {
+                // Install Node.js dependencies
                 sh 'npm install'
+            }
+        }
+
+        stage('Build Application') {
+            steps {
+                // Build the Angular application
                 sh 'ng build --prod'
             }
         }
 
-        stage('Test') {
+        stage('Serve Application') {
             steps {
-                sh 'sudo cp -r dist/your-app-name/* /var/www/html/'
-                sh 'sudo systemctl restart nginx'
-            }
-        }
-  
-        stage('Deploy') {
-            steps {
-                sh 'sudo cp -r dist/your-app-name/* /var/www/html/'
-                sh 'sudo systemctl restart nginx'
+                // Start the application using a lightweight HTTP server
+                sh 'npx http-server -p 8080  angular-jenkins-app;
             }
         }
     }
